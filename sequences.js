@@ -20,3 +20,12 @@ function* take(amount, sequence) {
     count++;
   }
 }
+
+// repeatedly
+//
+// Repeatedly evaluate the logic and yield the result.
+function* repeatedly(logic) {
+  while (true) {
+    yield logic();
+  }
+}
