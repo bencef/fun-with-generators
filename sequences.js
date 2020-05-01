@@ -55,3 +55,16 @@ function* map(transform, sequence) {
 // const positives = iterate(1, n => n+1);
 // const squares = map(n => n*n, positives);
 // Array.from(take(10, squares))
+
+// filter
+//
+// Yields only values matching a predicate.
+function* filter(predicate, sequence) {
+  for(const value of sequence) {
+    if (predicate(value)) {
+      yield value;
+    }
+  }
+}
+
+// Array.from(take(10, filter(odd, iterate(1, n => n+1))))
