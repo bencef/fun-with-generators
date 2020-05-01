@@ -29,3 +29,17 @@ function* repeatedly(logic) {
     yield logic();
   }
 }
+
+// iterate
+//
+// repeatedly call the logic with the last result.
+function* iterate(initial, transform) {
+  let value = initial;
+  while (true) {
+    yield value;
+    value = transform(value);
+  }
+}
+
+// Array.from(take(5, iterate(1, n => n + 1)))
+// Array.from(take(5, iterate(1, n => n * 2)))
