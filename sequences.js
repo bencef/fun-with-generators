@@ -43,3 +43,15 @@ function* iterate(initial, transform) {
 
 // Array.from(take(5, iterate(1, n => n + 1)))
 // Array.from(take(5, iterate(1, n => n * 2)))
+
+// map
+//
+// Map a transform over all elements of a sequence.
+function* map(transform, sequence) {
+  for (const value of sequence) {
+    yield transform(value);
+  }
+}
+// const positives = iterate(1, n => n+1);
+// const squares = map(n => n*n, positives);
+// Array.from(take(10, squares))
