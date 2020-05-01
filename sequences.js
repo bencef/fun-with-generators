@@ -68,3 +68,17 @@ function* filter(predicate, sequence) {
 }
 
 // Array.from(take(10, filter(odd, iterate(1, n => n+1))))
+
+// true, false, true, false...
+// [true, false], [true, false]...
+
+// concatenate
+//
+// Concatenates the values in the sequence
+function* concatenate(sequence) {
+  for(const coll of sequence) {
+    yield* coll;
+  }
+}
+
+// Array.from(take(4, concatenate(repeat([true, false]))))
